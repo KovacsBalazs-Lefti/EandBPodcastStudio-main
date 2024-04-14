@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Foglalas;
+use App\Models\Szolgaltatasok;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -24,9 +25,13 @@ class FoglalasFactory extends Factory
             $allfelhasznaloid = User::all()->pluck('felhasznaloid');
             $user_felhasznaloid = $this->faker->randomElement($allfelhasznaloid);
 
+            $allSzolgaltatasok = Szolgaltatasok::all()->pluck('szolgaltatasnev');
+            $szolgaltatasnev = $this->faker->randomElement($allSzolgaltatasok);
+
+
             return [
                 'user_felhasznaloid' => $user_felhasznaloid,
-                'szolgaltatas' => $this->faker->sentence(),
+                'szolgaltatasnev' => $szolgaltatasnev,
                 'letszam' => rand(1, 5),
                 'foglalaskezdete' => Carbon::now()->addDays(rand(1, 365)), // Add 1 to 365 days to current date
                 'foglalashossza' => rand(1, 7),

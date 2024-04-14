@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
+            SzolgaltatasokSeeder::class,
             FoglalasSeeder::class,
-            SzolgaltatasokSeeder::class
         ]);
     }
 }

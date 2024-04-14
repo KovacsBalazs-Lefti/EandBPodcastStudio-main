@@ -25,7 +25,6 @@ class Foglalas extends Model
       'foglalashossza',
       'megjegyzes',
       'user_felhasznaloid',
-      'foglalas_foglalasid',
     ];
 
     public function user() : BelongsTo

@@ -20,18 +20,10 @@ class SzolgaltatasokFactory extends Factory
     public function definition(): array
     {
 
-        $allfelhasznaloid = User::all()->pluck('felhasznaloid');
-        $user_felhasznaloid = $this->faker->randomElement($allfelhasznaloid);
-
-        $allszolgaltatas = Foglalas::all()->pluck('foglalasid');
-        $foglalasid_szolgaltatasok = $this->faker->randomElement($allszolgaltatas);
-
         return [
             'szolgaltatasnev' => $this->faker->sentence(10),
             'leiras' => $this->faker->paragraph(),
             'ar'=> $this->faker->numberBetween(25000, 180000),
-            'foglalasid_szolgaltatasok' => $foglalasid_szolgaltatasok,
-            'user_felhasznaloid' => $user_felhasznaloid,
         ];
     }
 }

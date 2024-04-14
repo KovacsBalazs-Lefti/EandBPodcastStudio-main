@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('szolgaltatasnev', 100);
             $table->text('leiras');
             $table->decimal('ar',10, 0);
-            $table->unsignedBigInteger('user_felhasznaloid');
-            $table->foreign('user_felhasznaloid')->references('felhasznaloid')->on('users');
             $table->timestamps();
         });
     }
