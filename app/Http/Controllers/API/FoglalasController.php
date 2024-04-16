@@ -19,11 +19,13 @@ class FoglalasController extends Controller
     {
         //felhasználó lekérdezése
         $user = auth()->user();
+        //return Foglalas::all();
+        //return $user->foglalas;
         //csak a törölt foglalás visszaadása
-        return Foglalas::onlyTrashed()->where("user_felhasznaloid",$user->felhasznaloid)->get();
+        //return Foglalas::onlyTrashed()->where("user_felhasznaloid",$user->felhasznaloid)->get();
         //return Foglalas::withTrashed()->where(["user_felhasznaloid" => $user->felhasznaloid, ["deleted_at", "<>", null]])->get();
-        return $user->foglalas;
-        //return Foglalas::where("felhasznaloid", $user->felhasznaloid)->get();
+        //return $user->foglalas;
+        return Foglalas::where("user_felhasznaloid", $user->felhasznaloid)->get();
     }
 
     /**
@@ -32,7 +34,6 @@ class FoglalasController extends Controller
     public function store(StoreFoglalasRequest $request)
     {
         $user = auth()->user();
-
         // $foglalas = new Foglalas([
         //     'felhasznaloid'=>$user->felhasznaloid,
         //     'szolgaltatas'=>$request->input('szolgaltatas'),
@@ -53,6 +54,13 @@ class FoglalasController extends Controller
             //     'message' => ' A foglalás sikeresen létrejött!',
             //     'foglalas' =>$foglalas
             // ], 201);
+
+
+
+        // user adatok lekérdezése, például email megjelenítése a frontend-en
+        // $foglalas->user;
+
+        return $foglalas;
     }
 
     /**

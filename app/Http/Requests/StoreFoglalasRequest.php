@@ -49,6 +49,7 @@ class StoreFoglalasRequest extends FormRequest
                 'string',
                 'max:500', // Maximum 1000 karakter lehet
             ],
+            
             //szabály ami lehetővé teszi a meglévő foglalással való módosítást is
             Rule::unique('foglalas')->where(function ($query) use ($foglalasid) {
                 $foglalaskezdete = $this->input('foglalaskezdete');
