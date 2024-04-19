@@ -53,4 +53,7 @@ class SzolgaltatasokController extends Controller
     {
         //
     }
+    public function all() {
+        return Szolgaltatasok::all();
+    }
 }

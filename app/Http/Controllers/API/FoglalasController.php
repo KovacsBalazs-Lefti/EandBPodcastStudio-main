@@ -81,17 +81,21 @@ class FoglalasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFoglalasRequest $request, string $felhasznaloid)
+    public function update(UpdateFoglalasRequest $request, string $user_felhasznaloid)
     {
         //egy rekord lekérdezése
-        $foglalas = Foglalas::find($felhasznaloid);
+        $foglalas = Foglalas::find($user_felhasznaloid);
         //ellenőrzés végrehajtasa, ha nincs - akkor hibaüzenet
         if(is_null($foglalas)){
-            return response()->json(["message" => "Foglalás nem található: $felhasznaloid"], 404);
+            return response()->json(["message" => "Foglalás nem található: $user_felhasznaloid"], 404);
         }
         $this->authorize("update", $foglalas);
         $foglalas->fill($request->all());
-        return $foglalas->save();
+        $foglalas->save();
+        return response()->json([
+            'message' => ' A foglalás sikeresen frissült!',
+            'foglalas' =>$foglalas
+        ], 201);
         return $foglalas;
 
     }
@@ -111,5 +115,18 @@ class FoglalasController extends Controller
        $foglalas->delete();
        return response()->noContent();
 
+    }
+    public function all(){
+        $foglalas = Foglalas::with('user')->get();
+        return $foglalas;
+    }
+    Public function showWithUser(string $felhasznaloid){
+            //egy rekord lekérdezése
+            $foglalas = Foglalas::with("user")->find($felhasznaloid);
+            //ellenőrzés végrehajtasa, ha nincs - akkor hibaüzenet
+            if(is_null($foglalas)){
+                return response()->json(["message" => "Foglalás nem található: $felhasznaloid"], 404);
+            }
+            return $foglalas;
     }
 }
