@@ -103,22 +103,23 @@ class FoglalasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $felhasznaloid)
+    public function destroy(string $foglalasid)
     {
-       //egy rekord lekérdezése
-       $foglalas = Foglalas::find($felhasznaloid);
+        $user = auth()->user();
+        //egy rekord lekérdezése
+       $foglalas = Foglalas::find($foglalasid);
        //ellenőrzés végrehajtasa, ha nincs - akkor hibaüzenet
        if(is_null($foglalas)){
-           return response()->json(["message" => "Foglalás nem található: $felhasznaloid"], 404);
+           return response()->json(["message" => "Foglalás nem található: $foglalasid"], 404);
        }
        $this->authorize("Delete", $foglalas);
        $foglalas->delete();
        return response()->noContent();
 
-    }
-    public function all(){
-        $foglalas = Foglalas::with('user')->get();
-        return $foglalas;
+   //}
+    //public function all(){
+        //$foglalas = Foglalas::with('user')->get();
+       // return $foglalas;
     }
     Public function showWithUser(string $felhasznaloid){
             //egy rekord lekérdezése

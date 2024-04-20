@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\FoglalasController;
 use App\Http\Controllers\API\SzolgaltatasokController;
+use App\Http\Controllers\API\userController;
 
 Route::get('/user', function (Request $request) {
     $user = $request->user();
@@ -23,6 +24,9 @@ Route::post('/login',[AuthController::class,'login']);
 Route::post('/logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
 Route::post('/logout-logoutEverywhere',[AuthController::class,'logoutEverywhere'])->middleware('auth:sanctum');
 
+Route::get("/user", [UserController::class, 'index']);
+
+
 //későbbi listázáshoz
 Route::get("/szolgaltatasok/all", [SzolgaltatasokController::class, 'all']);
 Route::get("/szolgaltatasok/all/id", [SzolgaltatasokController::class, 'show']);
@@ -35,3 +39,5 @@ Route::apiResource('/foglalas', FoglalasController::class)->middleware('auth:san
 Route::apiResource('/szolgaltatasok', SzolgaltatasokController::class)->middleware('auth:sanctum');
 
 Route::patch('/foglalasok/{user_felhasznaloid}', [FoglalasController::class, 'update'])->middleware('auth:sanctum');
+
+
