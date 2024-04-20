@@ -59,7 +59,7 @@ class FoglalasController extends Controller
 
         // user adatok lekérdezése, például email megjelenítése a frontend-en
         // $foglalas->user;
-
+        $foglalas = Foglalas::whereNull('deleted_at')->get();
         return $foglalas;
     }
 
@@ -112,7 +112,7 @@ class FoglalasController extends Controller
        if(is_null($foglalas)){
            return response()->json(["message" => "Foglalás nem található: $foglalasid"], 404);
        }
-       $this->authorize("Delete", $foglalas);
+       //$this->authorize("Delete", $foglalas);
        $foglalas->delete();
        return response()->noContent();
 
