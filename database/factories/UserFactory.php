@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'nev' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'jelszo' => bcrypt('pistike48'),
+            'role' => $this->faker->randomElement(['admin','user']),
             'telefonszam' => $this->faker->phoneNumber(),
             'szemelyi_szam' => $this->faker->regexify('[A-Za-z0-9]{8}'),
             'szuletesi_datum' => $this->faker->date('Y-m-d', '-18 years'),

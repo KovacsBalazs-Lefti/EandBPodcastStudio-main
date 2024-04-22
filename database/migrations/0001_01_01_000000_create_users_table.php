@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nev');
             $table->string('email')->unique();
             $table->string('jelszo');
+            $table->string('role')->default('user');
             $table->string('telefonszam');
             $table->string('szemelyi_szam');
             $table->date('szuletesi_datum');
