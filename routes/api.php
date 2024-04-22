@@ -24,9 +24,6 @@ Route::post('/login',[AuthController::class,'login']);
 Route::post('/logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
 Route::post('/logout-logoutEverywhere',[AuthController::class,'logoutEverywhere'])->middleware('auth:sanctum');
 
-Route::get("/user", [UserController::class, 'index']);
-
-
 //későbbi listázáshoz
 Route::get("/szolgaltatasok/all", [SzolgaltatasokController::class, 'all']);
 Route::get("/szolgaltatasok/all/id", [SzolgaltatasokController::class, 'show']);
@@ -40,4 +37,4 @@ Route::apiResource('/szolgaltatasok', SzolgaltatasokController::class)->middlewa
 
 Route::patch('/foglalasok/{user_felhasznaloid}', [FoglalasController::class, 'update'])->middleware('auth:sanctum');
 
-
+Route::apiResource('/users', userController::class)->middleware('auth:sanctum');
