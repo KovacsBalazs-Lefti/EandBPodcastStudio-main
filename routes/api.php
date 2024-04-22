@@ -37,4 +37,5 @@ Route::apiResource('/szolgaltatasok', SzolgaltatasokController::class)->middlewa
 
 Route::patch('/foglalasok/{user_felhasznaloid}', [FoglalasController::class, 'update'])->middleware('auth:sanctum');
 
-Route::apiResource('/users', userController::class)->middleware('auth:sanctum');
+Route::apiResource('/user', userController::class)->middleware('auth:sanctum');
+

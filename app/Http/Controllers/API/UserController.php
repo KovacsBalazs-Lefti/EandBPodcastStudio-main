@@ -16,16 +16,11 @@ class UserController extends Controller
      public function index()
     {
         //van-e bejelentkezett felhasználó
-        if(Auth::check()) {
-            return response()->json(['message' =>'Nincs bejelentkezett felhasználó'],401);
-        }
-        //jogosultság ellenőrzés
-        $user = Auth::user();
-        if(!$user>isAdmin()){
-            return response()->json(['error' => 'Nincs jogosultságod ehhez a művelethez'], 403);
-        }
+
+
+        // Lekérjük az összes felhasználót és visszaadjuk JSON formátumban
         $users = User::all();
-        return response()->json(['users' =>$users]);
+        return response()->json(['users' => $users]);
     }
 
     /**
@@ -34,6 +29,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        return User::where("user_felhasznaloid", $user->felhasznaloid)->get();
     }
 
     /**
@@ -41,7 +37,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $users = User::all();
     }
 
     /**
