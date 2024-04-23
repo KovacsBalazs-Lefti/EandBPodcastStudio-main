@@ -34,14 +34,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-       // $userData = $request->all();
-        //$userData['jelszo'] = Hash::make($request->input('jelszo'));
+       $userData = $request->all();
+       $userData['jelszo'] = Hash::make($request->input('jelszo'));
 
-        // Felhasználó létrehozása és mentése
-        //$user = User::create($userData);
+        //Felhasználó létrehozása és mentése
+        $user = User::create($userData);
 
-        //return $user;
-       // return response()->json($user, 201);
+        return $user;
+       return response()->json($user, 201);
     }
 
     /**
@@ -71,16 +71,15 @@ class UserController extends Controller
             return response()->json(["message"=>"Felhasznalo nem található: $felhasznaloid"],404);
         }
 
-        if (!Auth::user()->role === 'admin') {
+        if (Auth::user()->role !== 'admin') {
             return response()->json(['error' => 'Nincs jogosultságod ehhez a művelethez'], 403);
             //return User::where("user_felhasznaloid", $user->felhasznaloid)->get();
-
+        }
         $user->fill($request->all());
         $user->save();
 
 
         return response()->json(['message' => 'A felhasználó sikeresen frissült!', 'felhasznalo' => $user], 201);
-        }
     }
 
     /**
@@ -96,6 +95,7 @@ class UserController extends Controller
             return response()->json(['error' => 'Nincs jogosultságod ehhez a művelethez'], 403);
         }
         $user = User::find($felhasznaloid);
+
         if (!$user) {
                 return response()->json(['error' => 'A felhasználó nem található'], 404);
         }
