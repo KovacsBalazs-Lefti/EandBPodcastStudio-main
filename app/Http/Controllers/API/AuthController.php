@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function register(RegisterRequest $request ) {
+
         $userData = $request->all();
         $userData['jelszo'] = Hash::make($request->input('jelszo'));
 
+
+        $userData['role'] = 'user';
         // Felhasználó létrehozása és mentése
         $user = User::create($userData);
 

@@ -73,10 +73,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function isAdmin(): bool
-    {
-        return $this->role === 'admin';
-    }
     public function foglalasok() : HasMany
     {
         return $this->hasMany(Foglalas::class);

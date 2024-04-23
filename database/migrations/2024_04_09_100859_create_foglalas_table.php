@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('foglalas', function (Blueprint $table) {
             $table->bigIncrements('foglalasid');
-            $table->unsignedBigInteger('user_felhasznaloid');
+            $table->unsignedBigInteger('user_felhasznaloid')->nullable();
             //$table->foreignIdFor(User::class)->constrained();
             $table->foreign('user_felhasznaloid')->references('felhasznaloid')->on('users');
             $table->string('szolgaltatasnev');
