@@ -16,8 +16,12 @@ class AuthController extends Controller
         $userData = $request->all();
         $userData['jelszo'] = Hash::make($request->input('jelszo'));
 
+        if ($userData['role'] === 'admin') {
+            $userData['role'] = 'admin';
+        } else {
+            $userData['role'] = 'user';
+        }
 
-        $userData['role'] = 'user';
         // Felhasználó létrehozása és mentése
         $user = User::create($userData);
 
