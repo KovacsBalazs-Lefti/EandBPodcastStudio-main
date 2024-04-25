@@ -22,7 +22,6 @@ class User extends Authenticatable
         'nev',
         'email',
         'jelszo',
-        'role',
         'telefonszam',
         'szemelyi_szam',
         'szuletesi_datum',
