@@ -15,7 +15,7 @@ class SzolgaltatasokController extends Controller
      */
     public function index()
     {
-        $user= auth()->user();
+        //$user= auth()->user();
         //return Szolgaltatasok::where("user_felhasznaloid", $user->szolgaltatasid)->get();
         $szolgaltatasok = Szolgaltatasok::all();
         return $szolgaltatasok;
@@ -26,8 +26,10 @@ class SzolgaltatasokController extends Controller
      */
     public function store(StoreSzolgaltatasokRequest $request)
     {
+        $szolgaltatasok = new Szolgaltatasok($request->all());
+        $szolgaltatasok->save();
 
-
+        return response()->json(["message" => "A szolgáltatás sikeresen létrehozva"], 201);
     }
 
     /**
@@ -35,7 +37,10 @@ class SzolgaltatasokController extends Controller
      */
     public function show(string $szolgaltatasid)
     {
-        //
+        $szolgaltatas = Szolgaltatasok::findOrFail($szolgaltatasid);
+        return response()->json($szolgaltatas);
+
+
     }
 
     /**
@@ -43,7 +48,9 @@ class SzolgaltatasokController extends Controller
      */
     public function update(UpdateSzolgaltatasokRequest $request, string $szolgaltatasid)
     {
-        //
+        $szolgaltatas = Szolgaltatasok::findOrFail($szolgaltatasid);
+        $szolgaltatas->update($request->all());
+        return response()->json(["message" => "A szolgáltatás sikeresen frissítésre került"], 200);
     }
 
     /**
@@ -51,7 +58,9 @@ class SzolgaltatasokController extends Controller
      */
     public function destroy(string $szolgaltatasid)
     {
-        //
+        $szolgaltatas = Szolgaltatasok::findOrFail($szolgaltatasid);
+        $szolgaltatas->delete();
+        return response()->json(["message" => "A szolgáltatás sikeresen törlésre került"], 200);
     }
     public function all() {
         return Szolgaltatasok::all();
