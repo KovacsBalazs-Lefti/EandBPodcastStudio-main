@@ -47,5 +47,25 @@ class UpdateFoglalasRequest extends FormRequest
             ],
         ];
     }
+    public function messages(): array{
+        return[
+            "foglalaskezdete.required" => "A foglalás kezdetének a dátumát kötelező megadni",
+            "foglalaskezdete.date" => "A foglalás kezdetének a dátumának érvényesnek kell lennie",
+            "foglalaskezdete.after_or_equal" => "A foglalás kezdetének jövőbeni dátumnak kell lennie",
+            "user_felhasznoid.exists" => "A felhasználó nem létezik",
+            "foglalashossza.required" => " A foglalás hosszát kötelező megadni",
+            "foglalashossza.numeric" => "A foglalás hosszának számnak kell lennie",
+            "foglalashossza.min" => "A foglalás hosszának legalább 1 órának kell lennie",
+            "foglalashossza.max" => "A foglalás hossza maximum 8 óra lehet",
+            "letszam.required" => "Létszámot kötelező megadni",
+            "letszam.numeric" => "A létszámnak számnak kell lennie",
+            "letszam.max" => "A létszámnak maximum 6 főnek kell lennie",
+            "megjegyzes.string" => "A megjegyzésnek szövegnek kell lennie",
+            "megjegyzes.max" => "A megjegyzés maximum 500 karakter lehet",
+
+
+        ];
+
+    }
 }
 

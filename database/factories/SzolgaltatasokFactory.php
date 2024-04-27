@@ -21,7 +21,7 @@ class SzolgaltatasokFactory extends Factory
     {
 
         return [
-            'szolgaltatasnev' => $this->faker->sentence(10),
+            'szolgaltatasnev' => $this->faker->words(5,true),
             'leiras' => $this->faker->paragraph(),
             'ar'=> $this->faker->numberBetween(25000, 180000),
         ];
