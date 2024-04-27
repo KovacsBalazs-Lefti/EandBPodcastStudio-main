@@ -36,7 +36,6 @@ return new class extends Migration
             $table->string('emelet')->nullable();
             $table->string('ajto')->nullable();
             $table->timestamps();
-
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -46,12 +45,13 @@ return new class extends Migration
         });
 
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('session_id')->primary();
-            $table->bigInteger('felhasznaloid')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
+            $table->bigIncrements('id');
+    $table->bigInteger('user_id')->unsigned()->nullable()->index(); // Megváltoztatott név
+    $table->string('ip_address', 45)->nullable();
+    $table->text('user_agent')->nullable();
+    $table->longText('payload');
+    $table->integer('last_activity')->index();
+    $table->foreign('user_id')->references('felhasznaloid')->on('users')->onDelete('set null'); // Kapcsolat felhasználó táblához
         });
     }
 

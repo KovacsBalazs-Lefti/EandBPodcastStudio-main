@@ -112,4 +112,13 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    'sanctum' => [
+        'stateful' => explode(',', env(
+            'SANCTUM_STATEFUL_DOMAINS',
+            'localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,::1'
+        )),
+        'model' => App\Models\User::class,
+        'storage_key' => 'felhasznaloid', // Ez az új elsődleges kulcs a session tábládban
+    ],
+
 ];
