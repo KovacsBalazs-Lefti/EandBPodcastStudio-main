@@ -26,4 +26,12 @@ class LoginRequest extends FormRequest
             "jelszo" => "required|string",
         ];
     }
+    public function messages(): array
+    {
+        return[
+            'email.required' => "Az email mező kitöltése kötelező",
+            'email.email' => "Az email cím formátuma nem megfelelő",
+            'jelszó.required'=> "A jelszó kitöltése kötelező.",
+        ];
+    }
 }
