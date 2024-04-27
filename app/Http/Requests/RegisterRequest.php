@@ -25,7 +25,6 @@ class RegisterRequest extends FormRequest
             "nev" => "required|string",
             "email" => "required|email|unique:users,email",
             "jelszo" => "required|string|min:8",
-            "jelszo_megerositese" => "required|string|min:8",
             "telefonszam" => "required|string",
             "szemelyi_szam" => "required|string|min:8",
             "szuletesi_datum" => "required|date_format:Y-m-d|before:-18 years",

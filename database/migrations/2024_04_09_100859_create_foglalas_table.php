@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('foglalasid');
             $table->unsignedBigInteger('user_felhasznaloid')->nullable();
             //$table->foreignIdFor(User::class)->constrained();
-            $table->foreign('user_felhasznaloid')->references('felhasznaloid')->on('users');
+            $table->foreign('user_felhasznaloid')->references('felhasznaloid')->on('users')->onDelete('cascade');
             $table->string('szolgaltatasnev');
             $table->integer('letszam');
             $table->dateTime('foglalaskezdete');
