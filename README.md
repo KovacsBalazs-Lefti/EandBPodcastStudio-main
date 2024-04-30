@@ -12,6 +12,8 @@ Frontend: [https://github.com/KovacsBalazs-Lefti/EandBPodcastStudio-frontend](ht
 
 - Előfizetési módosítások miatt 2db
 
+## Adatbázis export a rootban
+
 ## Telepítés lépései
 
 - Csomagok telepítése
