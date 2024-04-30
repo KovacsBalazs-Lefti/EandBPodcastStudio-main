@@ -1,0 +1,264 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Podcast_user_collection",
+    "dateExported": "2024-04-30T07:12:40.118Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "00bd759f-ecfa-4b14-bf88-dbbf1e9bd17f",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "PATCH USER",
+            "url": "http://localhost:8000/api/user/11",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-04-24T20:33:03.837Z",
+            "modified": "2024-04-24T21:39:51.491Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nev\": \"teszt\",\n  \"email\": \"teszt@gmail.com\",\n  \"jelszo\": \"tesztelek\",\n  \"jelszo_megerositese\": \"securepassword\",\n  \"role\": \"admin\",\n  \"telefonszam\": \"123456789\",\n  \"szemelyi_szam\": \"12345678\",\n  \"szuletesi_datum\": \"1990-01-01\",\n  \"ceg\": true,\n  \"cegnev\": \"Acme Inc.\",\n  \"ceg_tipus\": \"Kft.\",\n  \"ado_szam\": \"123456789\",\n  \"bankszamlaszam\": \"12345678901234567890123456\",\n  \"orszag\": \"Magyarország\",\n  \"iranyitoszam\": \"1234\",\n  \"varos\": \"Budapest\",\n  \"utca\": \"Kossuth utca\",\n  \"utca_jellege\": \"utca\",\n  \"hazszam\": \"10\",\n  \"epulet\": \"A\",\n  \"lepcsohaz\": \"1\",\n  \"emelet\": \"2\",\n  \"ajto\": \"3\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "10|jy4PSG1Qrb4ZgbII8zABqhNxB3Qi8fsVBTNxhzAec7374b71"
+            }
+        },
+        {
+            "_id": "82b79c9b-6bc9-472b-bf7b-055a49f4305e",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:8000/api/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-24T20:33:17.063Z",
+            "modified": "2024-04-29T07:52:49.419Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nev\": \"tesztadmin\",\n  \"email\": \"teszt@teszt.com\",\n  \"jelszo\": \"tesztelek\",\n  \"jelszo_megerositese\": \"securepassword\",\n  \"role\": \"admin\",\n  \"telefonszam\": \"123456789\",\n  \"szemelyi_szam\": \"12345678\",\n  \"szuletesi_datum\": \"1990-01-01\",\n  \"ceg\": true,\n  \"cegnev\": \"Acme Inc.\",\n  \"ceg_tipus\": \"Kft.\",\n  \"ado_szam\": \"123456789\",\n  \"bankszamlaszam\": \"12345678901234567890123456\",\n  \"orszag\": \"Magyarország\",\n  \"iranyitoszam\": \"1234\",\n  \"varos\": \"Budapest\",\n  \"utca\": \"Kossuth utca\",\n  \"utca_jellege\": \"utca\",\n  \"hazszam\": \"10\",\n  \"epulet\": \"A\",\n  \"lepcsohaz\": \"1\",\n  \"emelet\": \"2\",\n  \"ajto\": \"3\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0a2e7cec-e3f0-464b-8001-8208878ff0eb",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "del user by id",
+            "url": "http://localhost:8000/api/user/2",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-24T20:33:36.165Z",
+            "modified": "2024-04-24T20:33:36.165Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "12|WNQHRb4qJbDglyvEAFmd6pFhHrlrhsozR8VihGSf424736a3"
+            }
+        },
+        {
+            "_id": "4890fe4d-aaae-496a-b762-e6d7c176a1bc",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "get user by id",
+            "url": "http://localhost:8000/api/user/2",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-24T20:33:39.518Z",
+            "modified": "2024-04-24T20:33:39.518Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|f0nFpni1F3Jds1trXYdGsTg2g8sbX1p28oPeI6o425159ef1"
+            }
+        },
+        {
+            "_id": "286d3902-fb02-4afc-af72-d3479f553322",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8000/api/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-04-24T20:33:46.266Z",
+            "modified": "2024-04-29T07:59:48.026Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"teszt@teszt.com\",\n  \"jelszo\": \"tesztelek\"\n}\n",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|jJwqrXr6UrEJloyscdht7lTv5DJbkKpXrecqCgcSa22f8fc4"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8dddea33-77dd-4589-8b39-f507943af443",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "UserData by id Copy",
+            "url": "http://localhost:8000/api/user/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-24T20:33:51.696Z",
+            "modified": "2024-04-24T20:33:51.696Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|0l1Ur9tUwUv3vB1TVYn5wNL4dKCZb9x1e3ZNCyoP7b55bd05"
+            }
+        },
+        {
+            "_id": "ee75906b-ecf7-4be7-ad7b-4286d3bf8b11",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "Logout Everywhere",
+            "url": "http://localhost:8000/api/logout-logoutEverywhere",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-04-24T20:33:54.219Z",
+            "modified": "2024-04-24T20:33:54.219Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "$2y$12$8G.fzCiFR6NiAUmuUKye2OgGyRBXd/bCEIZh/tk3vw884ko0DOb/."
+            },
+            "tests": []
+        },
+        {
+            "_id": "4321605b-0d9a-428a-ab7f-b5d60d3641df",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "Logout",
+            "url": "http://localhost:8000/api/logout",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-04-24T20:34:01.381Z",
+            "modified": "2024-04-24T20:34:01.381Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|wtol0dwN9IF0qlD6jIr2PFFN4SkpWFkJ1yJWFGHd37472bb0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4a61d284-b2c2-4a43-8fe7-b2343016ea9f",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "UserData by id",
+            "url": "http://localhost:8000/api/user/5",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-04-24T20:34:05.277Z",
+            "modified": "2024-04-24T20:34:05.277Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|0l1Ur9tUwUv3vB1TVYn5wNL4dKCZb9x1e3ZNCyoP7b55bd05"
+            }
+        },
+        {
+            "_id": "51201ff6-314d-43d3-8664-7ea0167fa222",
+            "colId": "381b6f24-b1b0-4a29-be43-56d8316605d4",
+            "containerId": "",
+            "name": "UserData Copy",
+            "url": "http://localhost:8000/api/user",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-04-24T20:34:16.359Z",
+            "modified": "2024-04-24T20:59:40.302Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            }
+        }
+    ]
+}

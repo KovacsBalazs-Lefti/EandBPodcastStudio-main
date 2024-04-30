@@ -1,0 +1,410 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Podcastudio",
+    "dateExported": "2024-04-30T07:09:29.481Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8bda179b-1693-4b7b-bd7c-e8cc63dfe90d",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "del/szolgaltatasok/id",
+            "url": "http://localhost:8000/api/szolgaltatasok/4",
+            "method": "DELETE",
+            "sortNum": 7500,
+            "created": "2024-04-26T16:29:39.818Z",
+            "modified": "2024-04-26T16:31:55.509Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"foglalasid\": 16,\n  \"user_felhasznaloid\": 12,\n  \"szolgaltatasnev\": \"teszt\",\n  \"letszam\": 5,\n  \"foglalaskezdete\": \"2024-06-22 21:00:00\",\n  \"foglalashossza\": 1,\n  \"megjegyzes\": \"létszámmódosítás\",\n  \"created_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"updated_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"deleted_at\": null\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "20|KuoTAx0EpGBXSHKFnUMo34fi31pm8oIFVwSjhLuC73348448"
+            },
+            "tests": []
+        },
+        {
+            "_id": "15b68704-d258-4b12-81d2-f1bc13b1b78a",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8000/api/login",
+            "method": "POST",
+            "sortNum": 12500,
+            "created": "2024-04-16T18:56:23.767Z",
+            "modified": "2024-04-18T22:08:36.615Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"teszt@gmail.com\",\n  \"jelszo\": \"tesztelek\"\n}\n",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|jJwqrXr6UrEJloyscdht7lTv5DJbkKpXrecqCgcSa22f8fc4"
+            }
+        },
+        {
+            "_id": "a3e752bc-1f17-4afb-a881-57510bf108dd",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "Foglalas",
+            "url": "http://localhost:8000/api/foglalas",
+            "method": "POST",
+            "sortNum": 13750,
+            "created": "2024-04-16T18:56:23.772Z",
+            "modified": "2024-04-16T18:56:23.772Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"szolgaltatasnev\": \"Repellendus hic nemo dolorum nemo iusto fuga omnis et sit dolor eum aspernatur fugit.\", \n\"letszam\": 2, \n\"foglalaskezdete\": \"2024-05-21 19:00:00\", \n\"foglalashossza\": \"1\", \n\"megjegyzes\": \"Két kamera, mikfrofon, fények.\"\n}\n",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "43|0msFfFtsdPjGEAzy6QWJwn8NAbKRje7xwH061Lq3d970fcf5"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7142e368-1981-43f6-b03e-64906acd510a",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "post/szolgaltatasok",
+            "url": "http://localhost:8000/api/szolgaltatasok",
+            "method": "POST",
+            "sortNum": 14687.5,
+            "created": "2024-04-16T18:56:23.778Z",
+            "modified": "2024-04-26T16:40:48.621Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"szolgaltatasnev\": \"Business Csomag\", \n\"leiras\": \"mikrofonok, 2 db go pro kamera, 2 db tablet, fejhallgatók, Segítség a felvétel indításához és leállításához, Hangmérnök bérlése, Felvétel professzionális kamarákkal (2db), Podcast műsor arculat tervezés, Live streaming, YouTube, Facebook felületekre, Élőben vágás , Vágatlan anyag átadása adathordozón és felhőszolgáltatáson keresztül\", \n\"ar\": \"180000\"\n}\n",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "19|ejej5o5FmhWdAWe9uFfVq6ZEZ6u7W5vNCsCCFTuK671febb8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a9d10b08-472d-4fd4-969e-5378048739b3",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "get/szolgaltatasok",
+            "url": "http://localhost:8000/api/szolgaltatasok",
+            "method": "GET",
+            "sortNum": 14843.8,
+            "created": "2024-04-16T18:56:23.779Z",
+            "modified": "2024-04-16T18:56:23.779Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"szolgaltatasnev\": \"VIP Csomag\", \n\"leiras\": \"kamerafénycsapo\", \n\"ar\": \"10000\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3b1cc9b3-0188-4cc9-b02b-eaa08eda6f07",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "patch/Szolgaltatas/id ",
+            "url": "http://localhost:8000/api/szolgaltatas/4",
+            "method": "PATCH",
+            "sortNum": 14921.9,
+            "created": "2024-04-26T16:28:17.956Z",
+            "modified": "2024-04-26T16:28:17.956Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"foglalasid\": 16,\n  \"user_felhasznaloid\": 12,\n  \"szolgaltatasnev\": \"teszt\",\n  \"letszam\": 5,\n  \"foglalaskezdete\": \"2024-06-22 21:00:00\",\n  \"foglalashossza\": 1,\n  \"megjegyzes\": \"létszámmódosítás\",\n  \"created_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"updated_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"deleted_at\": null\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "21|5Rw2HajeRHnYQczphDxBizL0gd7aa5LmCFnGschKac3eecd4"
+            },
+            "tests": []
+        },
+        {
+            "_id": "44ea2801-e6c3-4f1a-82d3-bcdbc8153be3",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "Logout",
+            "url": "http://localhost:8000/api/logout",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-04-16T18:56:23.769Z",
+            "modified": "2024-04-16T18:56:23.769Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|wtol0dwN9IF0qlD6jIr2PFFN4SkpWFkJ1yJWFGHd37472bb0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "658e8383-a5f1-4069-918a-6605a9fa1140",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "Logout Everywhere",
+            "url": "http://localhost:8000/api/logout-logoutEverywhere",
+            "method": "POST",
+            "sortNum": 16250,
+            "created": "2024-04-16T18:56:23.771Z",
+            "modified": "2024-04-16T18:56:23.771Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "$2y$12$8G.fzCiFR6NiAUmuUKye2OgGyRBXd/bCEIZh/tk3vw884ko0DOb/."
+            },
+            "tests": []
+        },
+        {
+            "_id": "5bca87e1-2b01-42cf-9703-e1a894b7bbf2",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "UserData",
+            "url": "http://localhost:8000/api/user",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2024-04-16T18:56:23.770Z",
+            "modified": "2024-04-16T18:56:23.770Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "10|6A8X0NPGwRv5ObdAGFshFoqIpOViNGfTKDmKWFEZa66c1cc2"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2db78032-06b6-4a0d-81e3-3a7484dc0317",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "get/foglalas",
+            "url": "http://localhost:8000/api/foglalas",
+            "method": "GET",
+            "sortNum": 18750,
+            "created": "2024-04-16T18:56:23.773Z",
+            "modified": "2024-04-16T18:56:23.773Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "11|SM6FGXMygjrh0vyZNAxeCBAqWWB0MGhvGekYrCg76704ef8c"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c74f56ff-2ab5-4f62-9ecd-ed63fc3bac8a",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "get/foglalas/id",
+            "url": "http://localhost:8000/api/foglalas/16",
+            "method": "GET",
+            "sortNum": 19140.7,
+            "created": "2024-04-16T18:56:23.775Z",
+            "modified": "2024-04-18T23:13:49.389Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "25|dyUQiFk6NebrXJ1dd7zNPIGIpgLqZxBinPZlFKOqdbcc5fed"
+            }
+        },
+        {
+            "_id": "80b23240-781b-4e7a-9eba-dec604b02a3f",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "delete/foglalas/id",
+            "url": "http://localhost:8000/api/foglalas/4",
+            "method": "DELETE",
+            "sortNum": 19218.8,
+            "created": "2024-04-16T18:56:23.776Z",
+            "modified": "2024-04-16T18:56:23.776Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nev\": \"Kiss Pista\",\n\"email\": \"kisspista@gmail.com\",\n\"jelszo\":\"pistike48\",\n\"jelszo_megerositese\": \"pistike48\",\n\"telefonszam\": \"+36303379962\",\n\"szemelyi_szam\": \"869461ke\",\n\"szuletesi_datum\":\"1979-02-08\",\n\"ceg\": true,\n\"cegnev\": \"Roni\",\n\"ceg_tipus\": \"Bt\",\n\"ado_szam\": \"12345678\",\n\"bankszamlaszam\":\"56565656565656\",\n\"orszag\": \"Magyarország\",\n\"iranyitoszam\": \"1125\",\n\"varos\": \"Budapest\",\n\"utca\": \"Dániel\",\n\"utca_jellege\": \"út\",\n\"hazszam\": \"23\",\n\"epulet\": \"C\",\n\"lepcsohaz\":\"\",\n\"emelet\":\"1\",\n\"ajto\": \"8\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "3|SW0ZBf5ISGqNvAhBljApyffpaEGzTPJlSWNZG5Xtba34c0bb"
+            },
+            "tests": []
+        },
+        {
+            "_id": "3344582b-f870-4667-b41c-a31a61b3569b",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "post/foglalas /id",
+            "url": "http://localhost:8000/api/foglalas/12",
+            "method": "POST",
+            "sortNum": 19375,
+            "created": "2024-04-16T18:56:23.774Z",
+            "modified": "2024-04-16T18:56:23.774Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"szolgaltatasnev\": \"Művész Csomag\", \n\"letszam\": 2, \n\"foglalaskezdete\": \"2024-05-12 11:00:00\", \n\"foglalashossza\": \"4\", \n\"megjegyzes\": \"Két kamera, mikfrofon, fények, live stream.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "41|zrUr3BoKvOy0dvjSrktizel9JQTeNLA2DAPoWaKvfe67ecfc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "530a1e48-7ef1-44d0-b9ea-91cfddabb67f",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "patch/foglalas /id",
+            "url": "http://localhost:8000/api/foglalas/16",
+            "method": "PATCH",
+            "sortNum": 19687.5,
+            "created": "2024-04-16T18:56:23.777Z",
+            "modified": "2024-04-18T23:15:20.573Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"foglalasid\": 16,\n  \"user_felhasznaloid\": 12,\n  \"szolgaltatasnev\": \"Repellendus hic nemo dolorum nemo iusto fuga omnis et sit dolor eum aspernatur fugit.\",\n  \"letszam\": 2,\n  \"foglalaskezdete\": \"2024-05-21 19:00:00\",\n  \"foglalashossza\": 1,\n  \"megjegyzes\": \"valamivalami\",\n  \"created_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"updated_at\": \"2024-04-18T22:46:32.000000Z\",\n  \"deleted_at\": null\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "25|dyUQiFk6NebrXJ1dd7zNPIGIpgLqZxBinPZlFKOqdbcc5fed"
+            }
+        },
+        {
+            "_id": "2a3e572d-fa79-4502-9033-09ef2d3998b8",
+            "colId": "7c7c2b40-ee92-434f-9f72-505dd6710789",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:8000/api/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-16T18:56:23.768Z",
+            "modified": "2024-04-16T23:05:34.319Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nev\": \"cicamica\",\n  \"email\": \"okidoki@example.com\",\n  \"jelszo\": \"okidoki11\",\n  \"jelszo_megerositese\": \"pistike48\",\n  \"telefonszam\": \"903-576-1776\",\n  \"szemelyi_szam\": \"85406473\",\n  \"szuletesi_datum\": \"1974-09-28\",\n  \"ceg\": true,\n  \"cegnev\": \"Robika\",\n  \"ceg_tipus\": \"Bt\",\n  \"ado_szam\": \"04693248\",\n  \"bankszamlaszam\": \"HU76308795516645198303168102\",\n  \"orszag\": \"Magyarország\",\n  \"iranyitoszam\": \"32766-0845\",\n  \"varos\": \"Budapest\",\n  \"utca\": \"Dániel\",\n  \"utca_jellege\": \"út\",\n  \"hazszam\": \"1125\",\n  \"epulet\": \"y\",\n  \"lepcsohaz\": \"7\",\n  \"emelet\": \"7\",\n  \"ajto\": \"4\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
