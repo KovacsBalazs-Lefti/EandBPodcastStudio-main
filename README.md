@@ -2,6 +2,16 @@
 
 Frontend: [https://github.com/KovacsBalazs-Lefti/EandBPodcastStudio-frontend](https://github.com/KovacsBalazs-Lefti/EandBPodcastStudio-frontend)
 
+## Követelmények
+
+- PHP 8.2
+
+- repóba feltöltve wikipage
+
+## Thunderclient export 2 db
+
+- Előfizetési módosítások miatt 2db
+
 ## Telepítés lépései
 
 - Csomagok telepítése
@@ -29,5 +39,7 @@ php artisan storage:link
 ```
 
 - Migrációk futtatása
-```plain
+
+```sh
 php artisan migrate 
+```
