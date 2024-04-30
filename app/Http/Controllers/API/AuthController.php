@@ -8,9 +8,61 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use OpenApi\Annotations as OA;
+
 
 class AuthController extends Controller
 {
+    /**
+ * @OA\Post(
+ *     path="/api/register",
+ *     tags={"user"},
+ *     summary="Felhasználó regisztrálása",
+ *     description="Új felhasználó regisztrálása a rendszerbe.",
+ *     operationId="registerUser",
+ *     @OA\Response(response=400, description="Érvénytelen felhasználó adatok"),
+ *     @OA\Response(response=422, description="Érvénytelen regisztrációs adatok"),
+ *     @OA\RequestBody(
+ *         required=true,
+ *         description="Regisztrációs adatok",
+ *         @OA\MediaType(
+ *             mediaType="application/json",
+ *             @OA\Schema(
+ *                 type="object",
+ *                 example={
+ *                     "nev": "Kovács Balázs",
+ *                     "email": "kovibali@gmail.com",
+ *                     "jelszo": "kovibali",
+ *                     "jelszo_megerositese": "securepassword",
+ *                     "role": "admin",
+ *                     "telefonszam": "123456789",
+ *                     "szemelyi_szam": "12345678",
+ *                     "szuletesi_datum": "1990-01-01",
+ *                     "ceg": true,
+ *                     "cegnev": "Acme Inc.",
+ *                     "ceg_tipus": "Kft.",
+ *                     "ado_szam": "123456789",
+ *                     "bankszamlaszam": "12345678901234567890123456",
+ *                     "orszag": "Magyarország",
+ *                     "iranyitoszam": "1234",
+ *                     "varos": "Budapest",
+ *                     "utca": "Kossuth utca",
+ *                     "utca_jellege": "utca",
+ *                     "hazszam": "10",
+ *                     "epulet": "A",
+ *                     "lepcsohaz": "1",
+ *                     "emelet": "2",
+ *                     "ajto": "3"
+ *                 }
+ *             )
+ *         )
+ *     ),
+ * )
+ */
+
+
+
+
     public function register(RegisterRequest $request ) {
 
         $userData = $request->all();
@@ -24,6 +76,39 @@ class AuthController extends Controller
         //return $user;
         return response()->json($user, 201);
 
+    }
+
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     tags={"Auth"},
+     *     operationId="login",
+     *     summary="Login",
+     *     description="Bejelentkezés a rendszerbe",
+     *     @OA\RequestBody(
+     *         description="Bejelentkezési adatok",
+     *         required=true,
+     *         @OA\JsonContent(
+     *         type="object",
+     *         @OA\Examples(
+     *         example="Kovacs",
+     *         summary="Kovács Balázs",
+     *         value={"email": "kovibali@gmail.com", "jelszo": "kovibali"},
+     *          ),
+     *          @OA\Examples(example="Teszt Elek",
+     *         value={"email": "tesztelek@tesztelek.hu", "jelszo": "tesztelek"},
+     *         summary="Kovács Balázs"
+     *          )
+     *       )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Érvénytelen felhasználói név vagy jelszó"
+     *     )
+     * )
+     */
+    public function addPet()
+    {
     }
     public function login(LoginRequest $request)  {
         $user = User::where("email", $request->email)->first();

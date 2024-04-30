@@ -1,0 +1,416 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "User API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Felhasználó regisztrálása",
+                "description": "Új felhasználó regisztrálása a rendszerbe.",
+                "operationId": "registerUser",
+                "requestBody": {
+                    "description": "Regisztrációs adatok",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "nev": "Kovács Balázs",
+                                    "email": "kovibali@gmail.com",
+                                    "jelszo": "kovibali",
+                                    "jelszo_megerositese": "securepassword",
+                                    "role": "admin",
+                                    "telefonszam": "123456789",
+                                    "szemelyi_szam": "12345678",
+                                    "szuletesi_datum": "1990-01-01",
+                                    "ceg": true,
+                                    "cegnev": "Acme Inc.",
+                                    "ceg_tipus": "Kft.",
+                                    "ado_szam": "123456789",
+                                    "bankszamlaszam": "12345678901234567890123456",
+                                    "orszag": "Magyarország",
+                                    "iranyitoszam": "1234",
+                                    "varos": "Budapest",
+                                    "utca": "Kossuth utca",
+                                    "utca_jellege": "utca",
+                                    "hazszam": "10",
+                                    "epulet": "A",
+                                    "lepcsohaz": "1",
+                                    "emelet": "2",
+                                    "ajto": "3"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Érvénytelen felhasználó adatok"
+                    },
+                    "422": {
+                        "description": "Érvénytelen regisztrációs adatok"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login",
+                "description": "Bejelentkezés a rendszerbe",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "Bejelentkezési adatok",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            },
+                            "examples": {
+                                "Kovacs": {
+                                    "summary": "Kovács Balázs",
+                                    "value": {
+                                        "email": "kovibali@gmail.com",
+                                        "jelszo": "kovibali"
+                                    }
+                                },
+                                "Teszt Elek": {
+                                    "summary": "Kovács Balázs",
+                                    "value": {
+                                        "email": "tesztelek@tesztelek.hu",
+                                        "jelszo": "tesztelek"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "Érvénytelen felhasználói név vagy jelszó"
+                    }
+                }
+            }
+        },
+        "/api/foglalas": {
+            "get": {
+                "tags": [
+                    "Foglalás"
+                ],
+                "summary": "Foglalások listázása",
+                "description": "Bejelentkezett felhasználó foglalásainak listázása",
+                "operationId": "20664e7289efb01235e39cd672c291c6",
+                "responses": {
+                    "200": {
+                        "description": "Sikeres művelet"
+                    },
+                    "401": {
+                        "description": "Nincs bejelentkezve a felhasználó vagy érvénytelen token"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "foglalas"
+                ],
+                "summary": "Foglalás létrehozása",
+                "description": "Új foglalás létrehozása a rendszerben.",
+                "operationId": "createFoglalas",
+                "requestBody": {
+                    "description": "Foglalási adatok",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "szolgaltatasnev": {
+                                        "type": "string"
+                                    },
+                                    "letszam": {
+                                        "type": "integer"
+                                    },
+                                    "foglalaskezdete": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "foglalashossza": {
+                                        "type": "integer"
+                                    },
+                                    "megjegyzes": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "szolgaltatasnev": "Basic Csomag Plusz",
+                                    "letszam": 2,
+                                    "foglalaskezdete": "2024-07-12 11:00:00",
+                                    "foglalashossza": 4,
+                                    "megjegyzes": "Két kamera, mikrofon, fények, live stream."
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Sikeres foglalás létrehozása"
+                    },
+                    "400": {
+                        "description": "Érvénytelen foglalási adatok"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/foglalas/{foglalasid}": {
+            "delete": {
+                "tags": [
+                    "foglalas"
+                ],
+                "summary": "Foglalás törlése",
+                "description": "Ez csak bejelentkezett felhasználó által tehető meg.",
+                "operationId": "deleteFoglalas",
+                "parameters": [
+                    {
+                        "name": "foglalasid",
+                        "in": "path",
+                        "description": "Törlendő foglalás azonosítója",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Érvénytelen foglalás azonosító"
+                    },
+                    "404": {
+                        "description": "Foglalás nem található"
+                    },
+                    "204": {
+                        "description": "Sikeres törlés"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "foglalas"
+                ],
+                "summary": "Foglalás frissítése",
+                "description": "Ez csak bejelentkezett felhasználó által tehető meg.",
+                "operationId": "updateFoglalas",
+                "parameters": [
+                    {
+                        "name": "foglalasid",
+                        "in": "path",
+                        "description": "Frissítendő foglalás azonosítója",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Frissített foglalás objektum",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "szolgaltatasnev": "Basic Csomag Plusz",
+                                    "letszam": 2,
+                                    "foglalaskezdete": "2024-06-21 19:00:00",
+                                    "foglalashossza": 1,
+                                    "megjegyzes": "Két kamera, mikrofon, fények."
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Érvénytelen foglalás adatok"
+                    },
+                    "404": {
+                        "description": "Foglalás nem található"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Bejelentkezett felhasznalok listazasa",
+                "description": "Bejelentkezett felhasznalok listazasa",
+                "operationId": "fe9992e1e7e6e2d260628b2dbd89ef72",
+                "responses": {
+                    "200": {
+                        "description": "sikeres művelet"
+                    },
+                    "401": {
+                        "description": "Nincs bejelentkezve a felhasználó vagy érvénytelen token"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/user/{felhasznaloid}": {
+            "patch": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Felhasználó frissítése",
+                "description": "Ez csak bejelentkezett felhasználó által tehető meg.",
+                "operationId": "updateUser",
+                "parameters": [
+                    {
+                        "name": "felhasznaloid",
+                        "in": "path",
+                        "description": "Frissítendő felhasználó azonosítója",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Frissített felhasználó objektum",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "nev": "Kovács Balázs",
+                                    "email": "kovibali@gmail.com",
+                                    "jelszo": "kovibali",
+                                    "jelszo_megerositese": "securepassword",
+                                    "role": "admin",
+                                    "telefonszam": "123456789",
+                                    "szemelyi_szam": "12345678",
+                                    "szuletesi_datum": "1990-01-01",
+                                    "ceg": true,
+                                    "cegnev": "Acme Inc.",
+                                    "ceg_tipus": "Kft.",
+                                    "ado_szam": "123456789",
+                                    "bankszamlaszam": "12345678901234567890123456",
+                                    "orszag": "Magyarország",
+                                    "iranyitoszam": "1234",
+                                    "varos": "Budapest",
+                                    "utca": "Kossuth utca",
+                                    "utca_jellege": "utca",
+                                    "hazszam": "10",
+                                    "epulet": "A",
+                                    "lepcsohaz": "1",
+                                    "emelet": "2",
+                                    "ajto": "3"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Érvénytelen felhasználó adatok"
+                    },
+                    "404": {
+                        "description": "Felhasználó nem található"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/user/{felhasznaloid}": {
+            "delete": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Felhasználó törlése",
+                "description": "Ez csak bejelentkezett felhasználó által tehető meg.",
+                "operationId": "deleteUser",
+                "parameters": [
+                    {
+                        "name": "felhasznaloid",
+                        "in": "path",
+                        "description": "Törlendő felhasználó azonosítója",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Érvénytelen felhasználó azonosító"
+                    },
+                    "404": {
+                        "description": "Felhasználó nem található"
+                    },
+                    "204": {
+                        "description": "Sikeres törlés"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "sanctum": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}
